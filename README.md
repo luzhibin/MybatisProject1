@@ -1,0 +1,23 @@
+# MybatisProject1
+### 所需jar包存放在lib目录下
+### MyBatis入门程序
+  * 1.下载Mybatis核心包  
+  * 2.创建工程,引入MyBatis核心包及依赖包
+  * 3.创建customer表,建立与表对象的domain
+  * 4.创建MyBatis核心配置文件SqlMappingConfig.xml
+  * 5.创建与表对象的关系映射Mapping文件编写sql语句
+  * 6.在核心配置文件当中引入Mapping
+  * 7.创建工厂,执行sql语句
+  
+### MyBatis核心Api
+  * SqlSessionFactoryBuilder
+    * SqlSessionFactoryBuilder用于创建SqlSessionFacoty
+    * SqlSessionFacoty一旦创建完成就不需要SqlSessionFactoryBuilder了
+    * 因为SqlSession是通过SqlSessionFactory创建的
+    * 所以可以将SqlSessionFactoryBuilder当成一个工具类使用，最佳使用范围是方法范围即方法体内局部变量。
+  * SqlSessionFactory
+    * 连接到数据库的一个会话
+    * sqlSession中定义了数据库操作方法。
+    * 每个线程都应该有它自己的SqlSession实例
+    * SqlSession的实例不能共享使用，它也是线程不安全的。因此最佳的范围是请求或方法范围
+    * 绝对不能将SqlSession实例的引用放在一个类的静态字段或实例字段中。
